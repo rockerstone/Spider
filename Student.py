@@ -159,6 +159,7 @@ class Student:
             lesson['time'] = ""
             for t in range(time_start, time_end + 1):
                 lesson['time'] += str(t) + ','
+            lesson['time'] = lesson['time'].rstrip(',')
             # week
             week = ""
             week_str = lesson['week']
@@ -177,7 +178,7 @@ class Student:
                 # print("MIN"+str(first)+" MAX"+str(last))
                 for i in range(first, last + 1, step):
                     week += str(i) + ","
-            # week = week.rstrip(",")
+            week = week.rstrip(",")
             lesson['week'] = week
             # print(str(lesson))
         return data
